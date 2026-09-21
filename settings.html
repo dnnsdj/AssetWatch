@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssetWatch - Settings</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/custom/settings.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand-wrap">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <div class="brand">Asset<span>Watch</span></div>
+        </div>
+
+        <nav class="main-nav">
+            <span class="nav-indicator"></span>
+            <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+            <a class="nav-link" href="markets.html"><i class="fa-solid fa-chart-column"></i>Markets</a>
+            <a class="nav-link" href="holdings.html"><i class="fa-solid fa-wallet"></i>Holdings</a>
+            <a class="nav-link active" href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+        </nav>
+
+        <div class="top-actions">
+            <button class="theme-toggle-button" aria-label="Toggle color mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+
+            <div class="binance-status" aria-live="polite">
+                <span class="binance-status-dot" data-binance-status="online"></span>
+                <span class="binance-status-text">Binance Online</span>
+            </div>
+
+            <div class="user-menu">
+                <button class="user-menu-toggle" aria-label="User menu">
+                    <span class="user-avatar">D</span>
+                    <span>Dennis</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="user-menu-panel">
+                    <a class="user-menu-item" href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                    <button class="user-menu-item logout" type="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </div>
+            </div>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Legacy sidebar kept for reference and still hidden on desktop. -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">AW</div>
+
+        <button class="sidebar-action menu-button" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+            <a class="side-item" href="dashboard.html">
+                <span class="tip">Dashboard</span>
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a class="side-item" href="markets.html">
+                <span class="tip">Markets</span>
+                <i class="fa-solid fa-chart-column"></i>
+            </a>
+            <a class="side-item" href="holdings.html">
+                <span class="tip">Holdings</span>
+                <i class="fa-solid fa-wallet"></i>
+            </a>
+            <a class="side-item active" href="settings.html" aria-current="page">
+                <span class="tip">Settings</span>
+                <i class="fa-solid fa-gear"></i>
+            </a>
+        </nav>
+
+        <button class="sidebar-action logout-button" aria-label="Log out">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </aside>
+
+    <main class="content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>Settings</h1>
+                <p>Manage your dashboard, Binance connection and preferences.</p>
+            </div>
+        </div>
+
+        <!-- ACCOUNT -->
+        <section class="settings-section">
+            <h2>Account</h2>
+
+            <div class="settings-card">
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Binance Connection</h3>
+                        <p>Read-only API connection</p>
+                    </div>
+
+                    <div class="settings-action connection-status">
+                        <span class="status-dot binance-status-dot" data-binance-status="online"></span>
+                        <span class="binance-status-text">Binance Online</span>
+                        <button class="settings-button">Manage <span>→</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREFERENCES -->
+        <section class="settings-section">
+            <h2>Preferences</h2>
+
+            <div class="settings-card">
+                <!-- Currency -->
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Currency</h3>
+                        <p>Choose the currency used throughout the dashboard.</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <select class="settings-select currency-select" aria-label="Currency selector">
+                            <option value="USD">USD</option>
+                            <option value="GHS">GHS</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Appearance -->
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Appearance</h3>
+                        <p>Choose how the dashboard looks.</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <div class="theme-options" aria-label="Theme selector">
+                            <button type="button" class="theme-option active" data-theme="light">Light</button>
+                            <button type="button" class="theme-option" data-theme="dark">Dark</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refresh -->
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Market Refresh</h3>
+                        <p>Automatically update market data.</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <select class="settings-select">
+                            <option value="15">15 seconds</option>
+                            <option value="30" selected>30 seconds</option>
+                            <option value="60">1 minute</option>
+                            <option value="300">5 minutes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section class="settings-section">
+            <h2>Dashboard</h2>
+
+            <div class="settings-card">
+                <!-- Default Market -->
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Default Market</h3>
+                        <p>Choose the market shown when you open Markets.</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <select class="settings-select">
+                            <option value="spot" selected>Spot</option>
+                            <option value="futures">Futures</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Portfolio Value -->
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Show Portfolio Value</h3>
+                        <p>Display total portfolio value on the dashboard.</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <label class="toggle">
+                            <input type="checkbox" checked />
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 24h Change -->
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Show 24h Change</h3>
+                        <p>Display daily portfolio performance.</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <label class="toggle">
+                            <input type="checkbox" checked />
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="settings-section">
+            <h2>Security</h2>
+
+            <div class="settings-card">
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>API Permissions</h3>
+                        <p>Read-only access</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <span class="permission-status">
+                            <span class="check-icon">✓</span>
+                            Enabled
+                        </span>
+                    </div>
+                </div>
+
+                <div class="security-notice">
+                    <span class="notice-icon">i</span>
+
+                    <p>Your API key cannot place trades or make withdrawals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANGER ZONE -->
+        <section class="settings-section danger-section">
+            <h2>Danger Zone</h2>
+
+            <div class="settings-card danger-card">
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <h3>Disconnect Binance</h3>
+                        <p>Remove the current Binance connection.</p>
+                    </div>
+
+                    <div class="settings-action">
+                        <button class="disconnect-button">Disconnect</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/site.js"></script>
+</body>
+
+</html>

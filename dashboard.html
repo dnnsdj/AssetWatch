@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssetWatch - Portfolio Monitor</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/custom/dashboard.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand-wrap">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <div class="brand">Asset<span>Watch</span></div>
+        </div>
+
+        <nav class="main-nav">
+            <span class="nav-indicator"></span>
+            <a class="nav-link active" href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+            <a class="nav-link" href="markets.html"><i class="fa-solid fa-chart-column"></i>Markets</a>
+            <a class="nav-link" href="holdings.html"><i class="fa-solid fa-wallet"></i>Holdings</a>
+            <a class="nav-link" href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+        </nav>
+
+        <div class="top-actions">
+            <button class="theme-toggle-button" aria-label="Toggle color mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+
+            <div class="binance-status" aria-live="polite">
+                <span class="binance-status-dot" data-binance-status="online"></span>
+                <span class="binance-status-text">Binance Online</span>
+            </div>
+
+            <div class="user-menu">
+                <button class="user-menu-toggle" aria-label="User menu">
+                    <span class="user-avatar">D</span>
+                    <span>Dennis</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="user-menu-panel">
+                    <a class="user-menu-item" href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                    <button class="user-menu-item logout" type="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </div>
+            </div>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Legacy sidebar kept for reference and still hidden on desktop. -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">AW</div>
+
+        <button class="sidebar-action menu-button" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+            <a class="side-item active" href="dashboard.html" aria-current="page">
+                <span class="tip">Dashboard</span>
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a class="side-item" href="markets.html">
+                <span class="tip">Markets</span>
+                <i class="fa-solid fa-chart-column"></i>
+            </a>
+            <a class="side-item" href="holdings.html">
+                <span class="tip">Holdings</span>
+                <i class="fa-solid fa-wallet"></i>
+            </a>
+            <a class="side-item" href="settings.html">
+                <span class="tip">Settings</span>
+                <i class="fa-solid fa-gear"></i>
+            </a>
+        </nav>
+
+        <button class="sidebar-action logout-button" aria-label="Log out">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </aside>
+
+    <main class="content">
+
+    <div class="welcome-banner">
+        <div>
+            <p class="eyebrow">Portfolio Monitor</p>
+            <h2>Welcome back, Dennis Adjei</h2>
+        </div>
+    </div>
+
+    <!-- Dashboard Header -->
+    <div class="page-header">
+        <div>
+            <h1>Dashboard</h1>
+            <p>Overview of your portfolio</p>
+        </div>
+
+        <button class="dashboard-refresh">
+            <i class="fa-solid fa-rotate"></i>
+            Refresh
+        </button>
+    </div>
+
+
+    <!-- Portfolio Summary -->
+    <div class="portfolio">
+
+        <div class="left">
+            <h3 class="portfolio-value">Portfolio Value</h3>
+            <p class="balance"><span data-currency-value="12482.34">$12,482.34</span></p>
+
+            <div class="balance-change positive">
+                <i class="fa-solid fa-arrow-up"></i>
+                <span data-currency-value="324.18">$324.18</span>
+                <span>+2.67%</span>
+                <small>24h</small>
+            </div>
+
+            <div class="portfolio-stats">
+                <div class="stat-pill">
+                    <span class="label">Invested</span>
+                    <span class="value" data-currency-value="10840.25">$10,840.25</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Cash</span>
+                    <span class="value" data-currency-value="1642.09">$1,642.09</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Monthly Return</span>
+                    <span class="value positive">+8.4%</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Risk</span>
+                    <span class="value">Moderate</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <h3>24h P&L</h3>
+            <p class="pnl-value"><span data-currency-value="324.18">+$324.18</span></p>
+            <span class="positive">+2.67%</span>
+
+            <div class="portfolio-stats">
+                <div class="stat-pill">
+                    <span class="label">Win rate</span>
+                    <span class="value positive">73%</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Assets</span>
+                    <span class="value">12</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Avg buy</span>
+                    <span class="value" data-currency-value="913.20">$913.20</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Volatility</span>
+                    <span class="value negative">-0.9%</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Charts -->
+    <div class="dashboard-charts">
+
+        <!-- Portfolio Performance -->
+        <div class="portfolio-chart chart-card">
+
+            <div class="chart-header">
+                <div>
+                    <h3>Portfolio Performance</h3>
+                    <p>Your portfolio value over time</p>
+                </div>
+
+                <select class="chart-period">
+                    <option value="1D">1D</option>
+                    <option value="1W">1W</option>
+                    <option value="1M" selected>1M</option>
+                    <option value="3M">3M</option>
+                    <option value="1Y">1Y</option>
+                    <option value="ALL">All</option>
+                </select>
+            </div>
+
+            <div class="chart-container">
+                <!-- Chart will be added here -->
+                <canvas id="portfolioChart"></canvas>
+            </div>
+
+        </div>
+
+
+        <!-- Asset Allocation -->
+        <div class="allocation-chart chart-card">
+
+            <div class="chart-header">
+                <div>
+                    <h3>Asset Allocation</h3>
+                    <p>Distribution of your holdings</p>
+                </div>
+            </div>
+
+            <div class="allocation-content">
+
+                <div class="allocation-visual">
+                    <canvas id="allocationChart"></canvas>
+                </div>
+
+                <div class="allocation-list">
+
+                    <div class="allocation-item">
+                        <div class="allocation-asset">
+                            <span class="allocation-dot btc"></span>
+                            <div>
+                                <strong>Bitcoin</strong>
+                                <small>BTC</small>
+                            </div>
+                        </div>
+
+                        <div class="allocation-value">
+                            <strong>52%</strong>
+                            <small>$6,490.82</small>
+                        </div>
+                    </div>
+
+
+                    <div class="allocation-item">
+                        <div class="allocation-asset">
+                            <span class="allocation-dot eth"></span>
+                            <div>
+                                <strong>Ethereum</strong>
+                                <small>ETH</small>
+                            </div>
+                        </div>
+
+                        <div class="allocation-value">
+                            <strong>28%</strong>
+                            <small>$3,495.05</small>
+                        </div>
+                    </div>
+
+
+                    <div class="allocation-item">
+                        <div class="allocation-asset">
+                            <span class="allocation-dot sol"></span>
+                            <div>
+                                <strong>Solana</strong>
+                                <small>SOL</small>
+                            </div>
+                        </div>
+
+                        <div class="allocation-value">
+                            <strong>12%</strong>
+                            <small>$1,497.88</small>
+                        </div>
+                    </div>
+
+
+                    <div class="allocation-item">
+                        <div class="allocation-asset">
+                            <span class="allocation-dot other"></span>
+                            <div>
+                                <strong>Others</strong>
+                                <small>Other assets</small>
+                            </div>
+                        </div>
+
+                        <div class="allocation-value">
+                            <strong>8%</strong>
+                            <small>$998.59</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Dashboard Lower Section -->
+    <div class="dashboard-grid">
+
+
+        <!-- Top Holdings -->
+        <div class="dashboard-card holdings-preview">
+
+            <div class="card-header">
+                <div>
+                    <h3>Top Holdings</h3>
+                    <p>Your largest assets</p>
+                </div>
+
+                <a href="holdings.html">View All</a>
+            </div>
+
+
+            <div class="holdings-list">
+
+                <!-- Bitcoin -->
+                <div class="holding-item">
+
+                    <div class="asset-info">
+                        <img src="images/btc.png" alt="Bitcoin">
+
+                        <div>
+                            <strong>Bitcoin</strong>
+                            <span>BTC</span>
+                        </div>
+                    </div>
+
+                    <div class="holding-price">
+                        <strong>$6,490.82</strong>
+                        <span class="positive">+2.34%</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Ethereum -->
+                <div class="holding-item">
+
+                    <div class="asset-info">
+                        <img src="images/eth.png" alt="Ethereum">
+
+                        <div>
+                            <strong>Ethereum</strong>
+                            <span>ETH</span>
+                        </div>
+                    </div>
+
+                    <div class="holding-price">
+                        <strong>$3,495.05</strong>
+                        <span class="positive">+1.82%</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Solana -->
+                <div class="holding-item">
+
+                    <div class="asset-info">
+                        <img src="images/sol.png" alt="Solana">
+
+                        <div>
+                            <strong>Solana</strong>
+                            <span>SOL</span>
+                        </div>
+                    </div>
+
+                    <div class="holding-price">
+                        <strong>$1,497.88</strong>
+                        <span class="positive">+4.21%</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Market Overview -->
+        <div class="dashboard-card market-preview">
+
+            <div class="card-header">
+                <div>
+                    <h3>Market Overview</h3>
+                    <p>Latest market movements</p>
+                </div>
+
+                <a href="markets.html">View Market</a>
+            </div>
+
+
+            <div class="market-list">
+
+                <div class="market-item">
+
+                    <div class="asset-info">
+                        <img src="images/btc.png" alt="Bitcoin">
+
+                        <div>
+                            <strong>Bitcoin</strong>
+                            <span>BTC/USDT</span>
+                        </div>
+                    </div>
+
+                    <div class="market-price">
+                        <strong>$67,420.50</strong>
+                        <span class="positive">+2.34%</span>
+                    </div>
+
+                </div>
+
+
+                <div class="market-item">
+
+                    <div class="asset-info">
+                        <img src="images/eth.png" alt="Ethereum">
+
+                        <div>
+                            <strong>Ethereum</strong>
+                            <span>ETH/USDT</span>
+                        </div>
+                    </div>
+
+                    <div class="market-price">
+                        <strong>$3,842.17</strong>
+                        <span class="negative">-1.18%</span>
+                    </div>
+
+                </div>
+
+
+                <div class="market-item">
+
+                    <div class="asset-info">
+                        <img src="images/sol.png" alt="Solana">
+
+                        <div>
+                            <strong>Solana</strong>
+                            <span>SOL/USDT</span>
+                        </div>
+                    </div>
+
+                    <div class="market-price">
+                        <strong>$178.50</strong>
+                        <span class="positive">+4.21%</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Recent Activity -->
+    <div class="dashboard-card recent-activity">
+
+        <div class="card-header">
+            <div>
+                <h3>Recent Activity</h3>
+                <p>Your latest portfolio activity</p>
+            </div>
+        </div>
+
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
+
+                <div class="activity-info">
+                    <strong>Received BTC</strong>
+                    <span>Bitcoin • Today, 10:42 AM</span>
+                </div>
+
+                <div class="activity-amount positive">
+                    +0.012 BTC
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+
+                <div class="activity-info">
+                    <strong>Sold ETH</strong>
+                    <span>Ethereum • Yesterday, 4:18 PM</span>
+                </div>
+
+                <div class="activity-amount negative">
+                    -0.25 ETH
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <div class="activity-info">
+                    <strong>Portfolio Updated</strong>
+                    <span>Yesterday, 1:32 PM</span>
+                </div>
+
+                <div class="activity-amount">
+                    $12,482.34
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </main>
+    <script src="js/site.js"></script>
+</body>
+
+</html>

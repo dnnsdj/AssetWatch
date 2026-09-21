@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AssetWatch - Holdings</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Holdings CSS -->
+    <link rel="stylesheet" href="css/custom/holdings.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand">Asset<span>Watch</span></div>
+      </div>
+
+      <nav class="main-nav">
+        <span class="nav-indicator"></span>
+        <a class="nav-link" href="dashboard.html">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </a>
+
+        <a class="nav-link" href="markets.html">
+          <i class="fa-solid fa-chart-column"></i>
+          Markets
+        </a>
+
+        <a class="nav-link active" href="holdings.html">
+          <i class="fa-solid fa-wallet"></i>
+          Holdings
+        </a>
+
+        <a class="nav-link" href="settings.html">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </nav>
+
+      <div class="top-actions">
+        <button class="theme-toggle-button" aria-label="Toggle color mode">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <div class="binance-status" aria-live="polite">
+          <span class="binance-status-dot" data-binance-status="online"></span>
+          <span class="binance-status-text">Binance Online</span>
+        </div>
+
+        <div class="user-menu">
+          <button class="user-menu-toggle" aria-label="User menu">
+            <span class="user-avatar">D</span>
+            <span>Dennis</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="user-menu-panel">
+            <a class="user-menu-item" href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            <button class="user-menu-item logout" type="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+          </div>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <!-- Legacy sidebar kept for reference and still hidden on desktop. -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">AW</div>
+
+      <button class="sidebar-action menu-button" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="sidebar-nav" aria-label="Sidebar navigation">
+        <a class="side-item" href="dashboard.html">
+          <span class="tip">Dashboard</span>
+          <i class="fa-solid fa-house"></i>
+        </a>
+        <a class="side-item" href="markets.html">
+          <span class="tip">Markets</span>
+          <i class="fa-solid fa-chart-column"></i>
+        </a>
+        <a class="side-item active" href="holdings.html" aria-current="page">
+          <span class="tip">Holdings</span>
+          <i class="fa-solid fa-wallet"></i>
+        </a>
+        <a class="side-item" href="settings.html">
+          <span class="tip">Settings</span>
+          <i class="fa-solid fa-gear"></i>
+        </a>
+      </nav>
+
+      <button class="sidebar-action logout-button" aria-label="Log out">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </aside>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="content">
+      <!-- Page Header -->
+
+      <div class="page-header">
+        <div>
+          <h1>Holdings</h1>
+          <p>Track your assets and portfolio performance</p>
+        </div>
+
+        <button class="refresh-button">
+          <i class="fa-solid fa-rotate"></i>
+          Refresh
+        </button>
+      </div>
+
+      <!-- =========================
+             PORTFOLIO SUMMARY
+        ========================== -->
+
+      <div class="holdings-summary">
+        <div class="summary-item">
+          <span>Total Portfolio Value</span>
+
+          <strong data-currency-value="12482.34"> $12,482.34 </strong>
+        </div>
+
+        <div class="summary-item">
+          <span>Total Cost</span>
+
+          <strong data-currency-value="10250.00"> $10,250.00 </strong>
+        </div>
+
+        <div class="summary-item">
+          <span>Total Profit/Loss</span>
+
+          <strong class="positive" data-currency-value="2232.34"> +$2,232.34 </strong>
+        </div>
+
+        <div class="summary-item">
+          <span>24h P&L</span>
+
+          <strong class="positive" data-currency-value="324.18"> +$324.18 </strong>
+
+          <small class="positive"> +2.67% </small>
+        </div>
+      </div>
+
+      <!-- =========================
+             SEARCH / FILTER
+        ========================== -->
+
+      <div class="holdings-controls">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="text" placeholder="Search holdings..." />
+        </div>
+
+        <div class="holdings-filter">
+          <select>
+            <option value="all">All Assets</option>
+
+            <option value="crypto">Crypto</option>
+
+            <option value="profitable">Profitable</option>
+
+            <option value="loss">Losses</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- =========================
+             HOLDINGS TABLE
+        ========================== -->
+
+      <div class="holdings-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Asset</th>
+
+              <th>Amount</th>
+
+              <th>Current Price</th>
+
+              <th>Cost Price</th>
+
+              <th>24h Change</th>
+
+              <th>Profit/Loss</th>
+
+              <th>Value</th>
+
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- BITCOIN -->
+
+            <tr>
+              <td>
+                <div class="asset-info">
+                  <img src="images/btc.png" alt="Bitcoin" />
+
+                  <div>
+                    <strong> Bitcoin </strong>
+
+                    <span> BTC </span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <div class="amount">
+                  <strong> 0.0824 </strong>
+
+                  <span> BTC </span>
+                </div>
+              </td>
+
+              <td>
+                <strong data-currency-price="67420.50"> $67,420.50 </strong>
+              </td>
+
+              <td data-currency-price="58420.00">$58,420.00</td>
+
+              <td class="positive">+2.34%</td>
+
+              <td class="positive" data-currency-value="741.60">+$741.60</td>
+
+              <td>
+                <strong data-currency-price="5556.40"> $5,556.40 </strong>
+              </td>
+
+              <td>
+                <button class="action-button">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </button>
+              </td>
+            </tr>
+
+            <!-- ETHEREUM -->
+
+            <tr>
+              <td>
+                <div class="asset-info">
+                  <img src="images/eth.png" alt="Ethereum" />
+
+                  <div>
+                    <strong> Ethereum </strong>
+
+                    <span> ETH </span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <div class="amount">
+                  <strong> 0.91 </strong>
+
+                  <span> ETH </span>
+                </div>
+              </td>
+
+              <td>
+                <strong data-currency-price="3842.17"> $3,842.17 </strong>
+              </td>
+
+              <td data-currency-price="3120.00">$3,120.00</td>
+
+              <td class="positive">+1.82%</td>
+
+              <td class="positive" data-currency-value="657.17">+$657.17</td>
+
+              <td>
+                <strong data-currency-price="3496.37"> $3,496.37 </strong>
+              </td>
+
+              <td>
+                <button class="action-button">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </button>
+              </td>
+            </tr>
+
+            <!-- SOLANA -->
+
+            <tr>
+              <td>
+                <div class="asset-info">
+                  <img src="images/sol.png" alt="Solana" />
+
+                  <div>
+                    <strong> Solana </strong>
+
+                    <span> SOL </span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <div class="amount">
+                  <strong> 8.40 </strong>
+
+                  <span> SOL </span>
+                </div>
+              </td>
+
+              <td>
+                <strong data-currency-price="178.50"> $178.50 </strong>
+              </td>
+
+              <td data-currency-price="142.00">$142.00</td>
+
+              <td class="positive">+4.21%</td>
+
+              <td class="positive" data-currency-value="306.60">+$306.60</td>
+
+              <td>
+                <strong data-currency-price="1499.40"> $1,499.40 </strong>
+              </td>
+
+              <td>
+                <button class="action-button">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </button>
+              </td>
+            </tr>
+
+            <!-- BNB -->
+
+            <tr>
+              <td>
+                <div class="asset-info">
+                  <div class="asset-placeholder">B</div>
+
+                  <div>
+                    <strong> BNB </strong>
+
+                    <span> BNB </span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <div class="amount">
+                  <strong> 2.35 </strong>
+
+                  <span> BNB </span>
+                </div>
+              </td>
+
+              <td>
+                <strong data-currency-price="612.40"> $612.40 </strong>
+              </td>
+
+              <td data-currency-price="580.00">$580.00</td>
+
+              <td class="negative">-0.84%</td>
+
+              <td class="positive" data-currency-value="76.14">+$76.14</td>
+
+              <td>
+                <strong data-currency-price="1439.14"> $1,439.14 </strong>
+              </td>
+
+              <td>
+                <button class="action-button">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </button>
+              </td>
+            </tr>
+
+            <!-- USDT -->
+
+            <tr>
+              <td>
+                <div class="asset-info">
+                  <div class="asset-placeholder">$</div>
+
+                  <div>
+                    <strong> Tether </strong>
+
+                    <span> USDT </span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <div class="amount">
+                  <strong> 491.03 </strong>
+
+                  <span> USDT </span>
+                </div>
+              </td>
+
+              <td>
+                <strong data-currency-price="1.00"> $1.00 </strong>
+              </td>
+
+              <td data-currency-price="1.00">$1.00</td>
+
+              <td>0.00%</td>
+
+              <td data-currency-price="0.00">$0.00</td>
+
+              <td>
+                <strong data-currency-price="491.03"> $491.03 </strong>
+              </td>
+
+              <td>
+                <button class="action-button">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- =========================
+             TABLE FOOTER
+        ========================== -->
+
+      <div class="holdings-footer">
+        <span> Showing <strong>5</strong> assets </span>
+
+        <span>
+          Last updated:
+          <strong>Just now</strong>
+        </span>
+      </div>
+    </main>
+
+    <script src="js/site.js"></script>
+  </body>
+</html>

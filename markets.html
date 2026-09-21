@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssetWatch - Markets</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/custom/market.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand-wrap">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <div class="brand">Asset<span>Watch</span></div>
+        </div>
+
+        <nav class="main-nav">
+            <span class="nav-indicator"></span>
+            <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+            <a class="nav-link active" href="markets.html"><i class="fa-solid fa-chart-column"></i>Markets</a>
+            <a class="nav-link" href="holdings.html"><i class="fa-solid fa-wallet"></i>Holdings</a>
+            <a class="nav-link" href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+        </nav>
+
+        <div class="top-actions">
+            <button class="theme-toggle-button" aria-label="Toggle color mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+
+            <div class="binance-status" aria-live="polite">
+                <span class="binance-status-dot" data-binance-status="online"></span>
+                <span class="binance-status-text">Binance Online</span>
+            </div>
+
+            <div class="user-menu">
+                <button class="user-menu-toggle" aria-label="User menu">
+                    <span class="user-avatar">D</span>
+                    <span>Dennis</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="user-menu-panel">
+                    <a class="user-menu-item" href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                    <button class="user-menu-item logout" type="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </div>
+            </div>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Legacy sidebar kept for reference and still hidden on desktop. -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">AW</div>
+
+        <button class="sidebar-action menu-button" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="sidebar-nav" aria-label="Sidebar navigation">
+            <a class="side-item" href="dashboard.html">
+                <span class="tip">Dashboard</span>
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a class="side-item active" href="markets.html" aria-current="page">
+                <span class="tip">Markets</span>
+                <i class="fa-solid fa-chart-column"></i>
+            </a>
+            <a class="side-item" href="holdings.html">
+                <span class="tip">Holdings</span>
+                <i class="fa-solid fa-wallet"></i>
+            </a>
+            <a class="side-item" href="settings.html">
+                <span class="tip">Settings</span>
+                <i class="fa-solid fa-gear"></i>
+            </a>
+        </nav>
+
+        <button class="sidebar-action logout-button" aria-label="Log out">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+    </aside>
+
+    <main class="content">
+        <div class="market-toolbar">
+            <div class="search-box market-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search coins..." aria-label="Search coins" />
+            </div>
+
+            <div class="market-actions">
+                <select class="market-select" aria-label="Market type">
+                    <option value="all">All Markets</option>
+                    <option value="spot">Spot</option>
+                    <option value="futures">Futures</option>
+                    <option value="trending">Trending</option>
+                </select>
+
+                <button class="market-button">Watchlist</button>
+            </div>
+        </div>
+
+        <div class="market-summary">
+            <div class="market-stat">
+                <span class="label">Market Cap</span>
+                <span class="value">$2.87T</span>
+            </div>
+            <div class="market-stat">
+                <span class="label">24h Volume</span>
+                <span class="value">$94.2B</span>
+            </div>
+            <div class="market-stat">
+                <span class="label">BTC Dominance</span>
+                <span class="value positive">51.4%</span>
+            </div>
+            <div class="market-stat">
+                <span class="label">Sentiment</span>
+                <span class="value negative">Risk-Off</span>
+            </div>
+        </div>
+
+        <div class="market-trade-panel">
+            <div class="market-trade-header">
+                <div>
+                    <span class="mini-label">Trade</span>
+                    <h2>BTC / USDT</h2>
+                </div>
+                <div class="trade-scope">
+                    <button class="trade-chip active" type="button">Spot</button>
+                    <button class="trade-chip" type="button">Futures</button>
+                    <button class="trade-chip" type="button">24h</button>
+                </div>
+            </div>
+
+            <div class="trade-price-row">
+                <div class="trade-price">$67,420.12</div>
+                <div class="trade-delta positive">+2.34% today</div>
+            </div>
+
+            <div class="candlestick-chart" aria-label="BTC/USD candlestick chart">
+                <span class="candlestick up" style="--low: 70%; --high: 18%; --open: 36%; --close: 52%; --size: 12px; --color: #16a34a;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick down" style="--low: 78%; --high: 34%; --open: 54%; --close: 40%; --size: 12px; --color: #ef4444;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick up" style="--low: 66%; --high: 32%; --open: 42%; --close: 58%; --size: 12px; --color: #16a34a;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick down" style="--low: 82%; --high: 48%; --open: 60%; --close: 50%; --size: 12px; --color: #ef4444;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick up" style="--low: 74%; --high: 26%; --open: 38%; --close: 62%; --size: 12px; --color: #16a34a;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick down" style="--low: 90%; --high: 40%; --open: 66%; --close: 43%; --size: 12px; --color: #ef4444;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick up" style="--low: 65%; --high: 20%; --open: 30%; --close: 58%; --size: 12px; --color: #16a34a;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick down" style="--low: 76%; --high: 37%; --open: 55%; --close: 42%; --size: 12px; --color: #ef4444;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick up" style="--low: 60%; --high: 10%; --open: 27%; --close: 55%; --size: 12px; --color: #16a34a;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick down" style="--low: 84%; --high: 46%; --open: 62%; --close: 49%; --size: 12px; --color: #ef4444;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick up" style="--low: 70%; --high: 18%; --open: 35%; --close: 60%; --size: 12px; --color: #16a34a;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+                <span class="candlestick down" style="--low: 88%; --high: 44%; --open: 64%; --close: 48%; --size: 12px; --color: #ef4444;">
+                    <span class="wick"></span>
+                    <span class="body"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="a">
+
+            <!-- Hot -->
+            <div class="card1 hot">
+                <h3>Hot</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>24h</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BTC</td>
+                            <td>$67,420</td>
+                            <td class="positive">+2.34%</td>
+                        </tr>
+                        <tr>
+                            <td>ETH</td>
+                            <td>$3,842</td>
+                            <td class="positive">+1.82%</td>
+                        </tr>
+                        <tr>
+                            <td>SOL</td>
+                            <td>$178.50</td>
+                            <td class="positive">+4.21%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Top Gainers -->
+            <div class="card1 top-gainers">
+                <h3>Top Gainers</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>Gain</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BTC</td>
+                            <td>$67,420</td>
+                            <td class="positive">+8.5%</td>
+                        </tr>
+                        <tr>
+                            <td>ETH</td>
+                            <td>$3,842</td>
+                            <td class="positive">+5.2%</td>
+                        </tr>
+                        <tr>
+                            <td>BNB</td>
+                            <td>$612.40</td>
+                            <td class="positive">+3.8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Top Losers -->
+            <div class="card1 top-losers">
+                <h3>Top Losers</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>24h</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DOGE</td>
+                            <td>$0.142</td>
+                            <td class="negative">-6.4%</td>
+                        </tr>
+                        <tr>
+                            <td>AVAX</td>
+                            <td>$31.82</td>
+                            <td class="negative">-4.7%</td>
+                        </tr>
+                        <tr>
+                            <td>XRP</td>
+                            <td>$0.521</td>
+                            <td class="negative">-3.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Top Volume -->
+            <div class="card1 top-volume">
+                <h3>Top Volume</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>Volume</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BTC</td>
+                            <td>$67,420</td>
+                            <td>$28.4B</td>
+                        </tr>
+                        <tr>
+                            <td>ETH</td>
+                            <td>$3,842</td>
+                            <td>$14.7B</td>
+                        </tr>
+                        <tr>
+                            <td>SOL</td>
+                            <td>$178.50</td>
+                            <td>$5.8B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="allmarket">
+            <table class="market-table">
+                <thead>
+                    <tr>
+                        <th>Asset</th>
+                        <th>Price</th>
+                        <th>24h Change</th>
+                        <th>24h Volume</th>
+                        <th>Market Cap</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="asset-info">
+                                <img src="images/btc.png" alt="Bitcoin">
+                                <div>
+                                    <strong>Bitcoin</strong>
+                                    <span>BTC</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="btc-price">Loading...</td>
+                        <td class="positive">+2.34%</td>
+                        <td>$28.4B</td>
+                        <td>$1.33T</td>
+                        <td><button>Trade</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="asset-info">
+                                <img src="images/eth.png" alt="Ethereum">
+                                <div>
+                                    <strong>Ethereum</strong>
+                                    <span>ETH</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="eth-price">Loading...</td>
+                        <td class="negative">-1.18%</td>
+                        <td>$14.7B</td>
+                        <td>$462.1B</td>
+                        <td><button>Trade</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <script src="js/market.js"></script>
+    <script src="js/site.js"></script>
+</body>
+
+</html>

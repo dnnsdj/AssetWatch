@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssetWatch - Profile</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        body {
+            background: var(--bg);
+        }
+
+        .profile-page {
+            width: min(100%, 1100px);
+            margin: 0 auto;
+            padding: 30px 24px 60px;
+        }
+
+        .profile-shell {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 24px;
+        }
+
+        .profile-card {
+            background: var(--panel);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 22px;
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.04);
+            padding: 22px;
+        }
+
+        .profile-card h2,
+        .profile-card h3 {
+            color: var(--n3);
+            margin: 0 0 12px;
+        }
+
+        .profile-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 14px;
+        }
+
+        .profile-avatar {
+            width: 118px;
+            height: 118px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #fff;
+            background: linear-gradient(135deg, #fbbf24, #f97316);
+            box-shadow: 0 16px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .profile-role {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.1);
+            color: #b45309;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .profile-meta {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(148, 163, 184, 0.05);
+        }
+
+        .meta-row span {
+            color: #64748b;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .meta-row strong {
+            color: var(--n3);
+            font-size: 0.95rem;
+        }
+
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .detail-card {
+            background: rgba(148, 163, 184, 0.04);
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .detail-card .label {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .detail-card strong {
+            display: block;
+            color: var(--n3);
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .detail-card p {
+            margin: 0;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            color: #b45309;
+            border-radius: 999px;
+            padding: 7px 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 860px) {
+            .profile-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .account-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand-wrap">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <div class="brand">Asset<span>Watch</span></div>
+        </div>
+
+        <nav class="main-nav">
+            <span class="nav-indicator"></span>
+            <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+            <a class="nav-link" href="markets.html"><i class="fa-solid fa-chart-column"></i>Markets</a>
+            <a class="nav-link" href="holdings.html"><i class="fa-solid fa-wallet"></i>Holdings</a>
+            <a class="nav-link" href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+        </nav>
+
+        <div class="top-actions">
+            <button class="theme-toggle-button" aria-label="Toggle color mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+
+            <div class="binance-status" aria-live="polite">
+                <span class="binance-status-dot" data-binance-status="online"></span>
+                <span class="binance-status-text">Binance Online</span>
+            </div>
+
+            <div class="user-menu open">
+                <button class="user-menu-toggle" aria-label="User menu">
+                    <span class="user-avatar">D</span>
+                    <span>Dennis</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="user-menu-panel">
+                    <a class="user-menu-item" href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                    <button class="user-menu-item logout" type="button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </div>
+            </div>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="profile-page">
+        <div class="profile-shell">
+            <aside class="profile-card profile-summary">
+                <div class="profile-avatar">DA</div>
+                <div>
+                    <h2>Dennis Adjei</h2>
+                    <div class="profile-role"><i class="fa-solid fa-shield-check"></i> Verified Investor</div>
+                </div>
+
+                <div class="profile-meta">
+                    <div class="meta-row">
+                        <span>Member ID</span>
+                        <strong>AW-2048</strong>
+                    </div>
+                    <div class="meta-row">
+                        <span>Location</span>
+                        <strong>Accra, GH</strong>
+                    </div>
+                    <div class="meta-row">
+                        <span>Tier</span>
+                        <strong>Gold</strong>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="profile-card">
+                <h3>Account Overview</h3>
+                <div class="account-grid">
+                    <div class="detail-card">
+                        <span class="label">Total Portfolio</span>
+                        <strong>$12,482.34</strong>
+                        <p>Net value across crypto holdings and cash reserves.</p>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">24h Performance</span>
+                        <strong class="positive">+2.67%</strong>
+                        <p>Portfolio movement over the last 24 hours.</p>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">Investment Style</span>
+                        <strong>Balanced Growth</strong>
+                        <p>Long-term exposure with a moderate risk framework.</p>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">Connected Wallet</span>
+                        <strong>Binance Read-Only</strong>
+                        <p>Synced to your on-exchange portfolio data stream.</p>
+                    </div>
+                </div>
+
+                <div class="detail-card" style="margin-top: 18px;">
+                    <span class="label">Investment Focus</span>
+                    <strong>Core crypto and high-conviction winners</strong>
+                    <div class="tag-row">
+                        <span class="tag">BTC</span>
+                        <span class="tag">ETH</span>
+                        <span class="tag">SOL</span>
+                        <span class="tag">Stablecoins</span>
+                        <span class="tag">Layer 1</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/site.js"></script>
+</body>
+
+</html>
