@@ -125,12 +125,19 @@ const setupMobileNav = () => {
   const toggle = document.querySelector('.mobile-nav-toggle');
   if (!nav || !toggle) return;
 
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', (event) => {
+    event.stopPropagation();
     nav.classList.toggle('open');
   });
 
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+      nav.classList.remove('open');
+    }
   });
 };
 

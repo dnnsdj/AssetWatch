@@ -588,9 +588,9 @@ body.dark-mode .side-item.active i {
 @media (max-width: 860px) {
   .topbar {
     margin-left: 0;
-    padding: 12px 14px 10px;
-    min-height: 74px;
-    grid-template-columns: 1fr;
+    padding: 12px 14px;
+    min-height: 68px;
+    grid-template-columns: 1fr auto;
     gap: 12px;
     position: sticky;
     top: 0;
@@ -605,13 +605,30 @@ body.dark-mode .side-item.active i {
     justify-self: start;
   }
 
+  .top-actions {
+    justify-self: end;
+  }
+
   .main-nav {
-    display: flex;
-    width: 100%;
-    overflow-x: auto;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 12px;
+    right: 12px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+    overflow: visible;
     justify-content: flex-start;
-    padding: 4px 6px;
-    scrollbar-width: none;
+    padding: 10px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+  }
+
+  .main-nav.open {
+    display: flex;
   }
 
   .main-nav::-webkit-scrollbar {
@@ -623,10 +640,10 @@ body.dark-mode .side-item.active i {
   }
 
   .nav-link {
-    flex: 0 0 auto;
-    justify-content: center;
-    padding: 9px 14px 9px 10px;
-    border-radius: 999px;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 14px 12px 10px;
+    border-radius: 12px;
   }
 
   .nav-link i {
@@ -660,6 +677,12 @@ body.dark-mode .side-item.active i {
   }
 
   .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .theme-toggle-button,
+  .binance-status,
+  .user-menu {
     display: none;
   }
 
@@ -668,8 +691,7 @@ body.dark-mode .side-item.active i {
   }
 
   .user-menu-toggle {
-    min-width: 0;
-    padding: 0 10px 0 8px;
+    display: none;
   }
 
   .user-menu-toggle span {
